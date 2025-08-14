@@ -1,4 +1,5 @@
 import ToDoItem from '../view/TODOItem'
+import DataModel from '../viewmodel/DataModel';
 
 export class Backlog {
   id: string;
@@ -14,15 +15,22 @@ export class Backlog {
 @Entry
 @Component
 struct Index {
-  private totalTasks:Array<Backlog> = []
+  private totalTasks:Array<Resource> = [];
+
+  // 请求数据
+  aboutToAppear(): void {
+    this.totalTasks = DataModel.getData()
+  }
 
   build() {
     Column() {
       Text($r('app.string.page_title'))
         .fontSize(36)
         .fontWeight(800)
-      ForEach(this.totalTasks, (item: Backlog) => {
-        ToDoItem({item: item})
+        .textAlign(TextAlign.Start)
+        .width('100%')
+      ForEach(this.totalTasks, (item: string) => {
+        ToDoItem({content: item})
       }, (item: Backlog) => item.id)
     }
     .padding(20)
