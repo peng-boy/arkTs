@@ -1,0 +1,20 @@
+{
+  "routerMap": [
+    {
+      "name": "Basics",
+      "pageSourceFile": "src/main/ets/views/Basics.ets",
+      "buildFunction": "BasicsBuilder",
+      "data": {
+        "description" : "this is PageOne"
+      }
+    },
+    {
+      "name": "Navgation",
+      "pageSourceFile": "src/main/ets/views/Navgation.ets",
+      "buildFunction": "NavigationBuilder",
+      "data": {
+        "description" : "this is PageOne"
+      }
+    }
+  ]
+}

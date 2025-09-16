@@ -27,8 +27,40 @@
   },
   "modules": [
     {
-      "name": "entry",
-      "srcPath": "./entry",
+      "name": "default",
+      "srcPath": "./products/default",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "mapApplication",
+      "srcPath": "./products/mapApplication",
+      "targets": [
+        {
+          "name": "default",
+          "applyToProducts": [
+            "default"
+          ]
+        }
+      ]
+    },
+    {
+      "name": "homelibrary",
+      "srcPath": "./features/homelibrary"
+    },
+    {
+      "name": "orderLibrary",
+      "srcPath": "./features/orderLibrary",
+    },
+    {
+      "name": "common",
+      "srcPath": "./common",
       "targets": [
         {
           "name": "default",

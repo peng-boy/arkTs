@@ -1,0 +1,26 @@
+{
+  "module": {
+    "name": "mapApplication",
+    "type": "feature",
+    "description": "$string:module_desc",
+    "mainElement": "MapApplicationAbility",
+    "deviceTypes": [
+      "phone"
+    ],
+    "deliveryWithInstall": true,
+    "installationFree": false,
+    "pages": "$profile:main_pages",
+    "abilities": [
+      {
+        "name": "MapApplicationAbility",
+        "srcEntry": "./ets/mapapplicationability/MapApplicationAbility.ets",
+        "description": "$string:MapApplicationAbility_desc",
+        "icon": "$media:layered_image",
+        "label": "$string:MapApplicationAbility_label",
+        "startWindowIcon": "$media:startIcon",
+        "startWindowBackground": "$color:start_window_background",
+        "exported": true
+      }
+    ]
+  }
+}
