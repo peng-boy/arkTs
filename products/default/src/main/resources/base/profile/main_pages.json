@@ -1,7 +1,5 @@
 {
   "src": [
-    "pages/Index",
-    "views/Basics",
-    "views/HspView"
+    "pages/Index"
   ]
 }

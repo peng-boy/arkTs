@@ -1,27 +1,20 @@
-// import { add } from 'common'
+import { MainPage } from 'homelibrary'
 
 @Builder
-export function MyHSPBuilder(name: string, param: string) {
-  MyHSP({ name: name, value: param });
+export function MyHARBuilder(name: string, param: string) {
+  MyHAR({ name: name, value: param });
 }
 
 @Component
-struct MyHSP {
+struct MyHAR {
   pathInfos: NavPathStack = new NavPathStack();
-
   @State name:string = ''
   @State value: string = ''
-
-  @State num: number = 0
-
-  add = (n:number,v: number) => {
-    return n + v
-  }
 
   build() {
     NavDestination() {
       Column(){
-        Text('我是hsp案例页面')
+        MainPage()
       }
       .width('100%')
       .height('100%')

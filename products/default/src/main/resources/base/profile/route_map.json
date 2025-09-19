@@ -9,12 +9,33 @@
       }
     },
     {
-      "name": "Navgation",
-      "pageSourceFile": "src/main/ets/views/Navgation.ets",
+      "name": "Navigation",
+      "pageSourceFile": "src/main/ets/views/Navigation.ets",
       "buildFunction": "NavigationBuilder",
       "data": {
         "description" : "this is PageOne"
       }
+    },
+    {
+      "name": "HspView",
+      "pageSourceFile": "src/main/ets/views/HspView.ets",
+      "buildFunction": "MyHSPBuilder",
+      "data": {
+        "description" : "this is PageOne"
+      }
+    },
+    {
+      "name": "MyHAR",
+      "pageSourceFile": "src/main/ets/views/MyHAR.ets",
+      "buildFunction": "MyHARBuilder",
+      "data": {
+        "description" : "this is PageOne"
+      }
+    },
+    {
+      "name": "Media",
+      "pageSourceFile": "src/main/ets/views/Media.ets",
+      "buildFunction": "MediaBuilder"
     }
   ]
 }

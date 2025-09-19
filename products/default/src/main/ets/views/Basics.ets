@@ -4,7 +4,6 @@ export function BasicsBuilder(name: string, param: string) {
   Basics({ name: name, value: param });
 }
 
-@Entry
 @Component
 export struct Basics {
   pathInfos: NavPathStack = new NavPathStack();
@@ -14,6 +13,10 @@ export struct Basics {
   private name3:string = ''
   @State value: string = '';
 
+  aboutToAppear(): void {
+    console.log('hh',this.name,this.value);
+  }
+
   build() {
     NavDestination() {
       Column() {
@@ -22,7 +25,6 @@ export struct Basics {
           this.getUIContext().getRouter().back()
         })
       }
-      .size({ width: '100%', height: '100%' })
       Column(){
         Text('内容~~~~')
       }

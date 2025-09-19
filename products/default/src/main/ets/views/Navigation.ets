@@ -3,8 +3,6 @@ export function NavigationBuilder() {
   MyNavigation();
 }
 
-
-@Entry
 @Component
 struct MyNavigation {
   pageInfos: NavPathStack = new NavPathStack()

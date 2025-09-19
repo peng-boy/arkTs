@@ -1,12 +1,3 @@
-import {add} from 'common'
-import { MainPage } from 'homelibrary'
-
-interface RouteItemContent {
-  title: string
-  desc: string
-  path: string
-}
-
 class RouterItem {
   desc: string
   path: string
@@ -24,14 +15,16 @@ class RouterItem {
 struct Index {
   pageInfos: NavPathStack = new NavPathStack()
 
-  @State RouterContent: RouteItemContent[] = [
+  @State RouterContent: RouterItem[] = [
     new RouterItem('基础', 'Basics','基础的变量声明和修饰符'),
-    new RouterItem('路由', 'Navgation','路由的使用'),
-    new RouterItem('Hsp公共包的使用', 'HspView','公共module的使用，type为shared')
+    new RouterItem('路由', 'Navigation','路由的使用'),
+    new RouterItem('Hsp', 'HspView','公共module的使用，type为shared'),
+    new RouterItem('HAR', 'MyHAR','例如：一个UI组件库，可以称为HAR'),
+    new RouterItem('媒体查询', 'Media','媒体查询，视口判断，工具封装')
   ]
 
   @Builder
-  ViewItem(param: RouteItemContent){
+  ViewItem(param: RouterItem){
     Column({space: 10}) {
       Text(param.title)
         .fontColor(Color.Black)
@@ -42,8 +35,6 @@ struct Index {
         .fontSize(12)
     }
     .onClick(() => {
-      console.log('hh',param.desc, param.path);
-      add(1,2)
       this.pageInfos.pushPathByName(param.path, param.desc)
       // this.getUIContext().getRouter().pushUrl({url: 'views/' + param.path})
     })
@@ -57,11 +48,10 @@ struct Index {
 
   build() {
     Navigation(this.pageInfos) {
-      MainPage()
       Column({space:18}) {
-        ForEach(this.RouterContent, (item:RouteItemContent) => {
+        ForEach(this.RouterContent, (item:RouterItem) => {
           this.ViewItem(item)
-        }, (item:RouteItemContent) => item.path)
+        }, (item:RouterItem) => item.path)
       }
     }
     .width('100%')
